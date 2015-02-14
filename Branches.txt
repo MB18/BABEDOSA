@@ -1,0 +1,5 @@
+Branch Test : commit ici les modifications des classes du package test
+
+Banch Dev : commmit ici les modifications des classes métier
+
+Branch master : lorsqu'on est sur que tout est ok 
