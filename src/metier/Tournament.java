@@ -1,5 +1,7 @@
 package metier;
 
+import java.util.ArrayList;
+
 
 public class Tournament {
 
@@ -7,12 +9,14 @@ public class Tournament {
 	private String country;
 	private String winner;
 	private int bonus;
+	private ArrayList<Match> fixtures;
 	
 	public Tournament(String n, String c, int b){
 		name = n; 
 		country = c; 
 		setBonus(b);
 		winner = null;
+		fixtures = new ArrayList<Match>();
 	}
 	
 	public String getName() {
@@ -42,7 +46,14 @@ public class Tournament {
 	public void setBonus(int bonus) {
 		this.bonus = bonus;
 	}
-	
+	public void setFixtures(ArrayList<Match> list)
+	{
+		fixtures = list;
+	}
+	public ArrayList<Match> getFixtures()
+	{
+		return fixtures;
+	}
 	// method to add a winner for the tournament
 	public void BeWinner(TennisPlayer player){
 		player.setPoints(player.getPoints() + bonus );
