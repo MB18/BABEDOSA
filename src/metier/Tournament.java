@@ -9,6 +9,7 @@ public class Tournament {
 	private String country;
 	private String winner;
 	private int bonus;
+	private ArrayList<TennisPlayer> participants;
 	private ArrayList<Match> fixtures;
 	
 	public Tournament(String n, String c, int b){
@@ -16,6 +17,7 @@ public class Tournament {
 		country = c; 
 		setBonus(b);
 		winner = null;
+		participants = new ArrayList<TennisPlayer>();
 		fixtures = new ArrayList<Match>();
 	}
 	
@@ -46,6 +48,14 @@ public class Tournament {
 	public void setBonus(int bonus) {
 		this.bonus = bonus;
 	}
+	public void setParticipants(ArrayList<TennisPlayer> list)
+	{
+		participants = list;
+	}
+	public ArrayList<TennisPlayer> getParticipants()
+	{
+		return participants;
+	}
 	public void setFixtures(ArrayList<Match> list)
 	{
 		fixtures = list;
@@ -59,4 +69,16 @@ public class Tournament {
 		player.setPoints(player.getPoints() + bonus );
 		winner = player.getName();
 	}
+    public boolean TournamentParticipation(TennisPlayer tennisPlayer){
+    	
+    	if (tennisPlayer.getPoints()<=2*this.getBonus()){
+    		System.out.println("Inscription impossible : the player has not enough points to participate");
+    		return false;
+    	}
+    	else
+    	{
+    		this.getParticipants().add(tennisPlayer);
+    		return true; 
+    	} 
+    }
 }

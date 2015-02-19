@@ -74,7 +74,6 @@ public class Dancer extends Person {
     {
 	    Date date = new Date();
 	    long timeDepart = date.getTime(), timeFin;
-	    int i = 0;
 	    System.out.println("Ready for ya ?!?");
 	    do
 	    {
@@ -82,7 +81,6 @@ public class Dancer extends Person {
 	    	date = new Date();
 	    	timeFin = date.getTime(); 
 	    	//System.out.print("warming up in progress ");
-	    	i++;
 	    	ready = false;
 	    }
 	    while( (timeFin - timeDepart) < timeOfwarmUp) ;
@@ -97,5 +95,14 @@ public class Dancer extends Person {
 	{
 		Date d = new Date(0);
 		System.out.println(d);
+	}
+	
+	public boolean CheckWarmUpTime(){
+		if(this.getTimeOfwarmUp()<15){
+			System.out.println("Error : It is required to warm up more than 15 secondes");
+			return false;
+		}
+		else
+			return true;
 	}
 }
