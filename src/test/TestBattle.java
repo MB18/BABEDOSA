@@ -17,7 +17,7 @@ import org.junit.Before;
 import org.junit.Test;
 
 public class TestBattle {
-//TEEEEST
+
 	protected Battle battleDauphine;
 	protected Team BetSat, BaDo;
 	protected Date aujourdhui, newdate;
@@ -28,8 +28,8 @@ public class TestBattle {
 	public void setUp() throws Exception {
 		formatter = new SimpleDateFormat("dd-MM-yyyy");
 		aujourdhui = Calendar.getInstance().getTime();
-		System.out.println("String : " + formatter.format(aujourdhui));
-		//System.out.println(dateFormat.format(aujourdhui));
+		//System.out.println("String : " + formatter.format(aujourdhui));
+		BetSat = new Team("BetSat", null);
 		battleDauphine = new Battle (aujourdhui, "Dauphine", BetSat, BaDo);
 	}
 
@@ -38,9 +38,7 @@ public class TestBattle {
 	}
 
 	@Test
-	public void testGetDate() {
-	
-		
+	public void testGetDate() {	
 		assertEquals(aujourdhui, battleDauphine.getDate());
 	}
 
@@ -52,12 +50,11 @@ public class TestBattle {
 		try {
 			newdate = formatter.parse(dateMAJ);
 		} catch (ParseException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		System.out.println("avant : " + newdate);
+		//System.out.println("avant : " + newdate);
 		battleDauphine.setDate(newdate);
-		System.out.println("avant : battleDauphine.getDate() : " + formatter.format(battleDauphine.getDate()));
+		//System.out.println("avant : battleDauphine.getDate() : " + formatter.format(battleDauphine.getDate()));
 		assertEquals("02-03-2015", formatter.format(battleDauphine.getDate()));
 	}
 
@@ -106,9 +103,10 @@ public class TestBattle {
 		assertEquals("BaDo", battleDauphine.getWinner());
 	}
 	
-/*
+
 	@Test
 	public void testWinBattle() {
-		fail("Not yet implemented");
-	}*/
+		battleDauphine.WinBattle(BetSat);
+		assertEquals("BetSat", battleDauphine.getWinner());
+	}
 }
