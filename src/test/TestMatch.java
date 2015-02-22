@@ -30,9 +30,9 @@ public class TestMatch {
 		aujourdhui = new Date();
 		formatter = new SimpleDateFormat("dd-MM-yyyy");
 		aujourdhui = Calendar.getInstance().getTime();
-		tennisPlayer1 = new TennisPlayer("Nicole", "Pearson", "academyDauphine", 24, "Nicky", "Tennis", 5000);
-		tennisPlayer2 = new TennisPlayer("Thomas", "Catton","academyDauphine", 24, "Tom", "Tennis", 4000);
-		tennisPlayer3 = new TennisPlayer("Elise", "Catton","academyDauphine", 23, "Eli", "Tennis", 1000);
+		tennisPlayer1 = new TennisPlayer("Nicole", "Pearson", "academyDauphine", 24, "Nicky", "Tennis", 2000);
+		tennisPlayer2 = new TennisPlayer("Thomas", "Catton","academyDauphine", 24, "Tom", "Tennis", 3000);
+		tennisPlayer3 = new TennisPlayer("Elise", "Catton","academyDauphine", 23, "Eli", "Tennis", 4000);
 		tournoiInter = new Tournament ("TournoiInternationale", "France", 10);
 		tournoiUniv = new Tournament ("TournoiUniverselle", "Brezil", 20);
 		matchDauphine = new Match(aujourdhui, tennisPlayer1, tennisPlayer2, tournoiInter);
@@ -114,8 +114,12 @@ public class TestMatch {
 
 	@Test
 	public void testCheckPoints() {
-		assertEquals(true, matchDauphine.CheckPoints(tennisPlayer1, tennisPlayer2));
-		assertEquals(false, matchDauphine.CheckPoints(tennisPlayer3, tennisPlayer2));
+		
+		TennisPlayer testPlayer = new TennisPlayer("EliseB", "CattonB","academyDauphine", 23, "EliB", "Tennis", 4000);
+		
+		assertEquals(true, matchDauphine.CheckPoints(tennisPlayer1, tennisPlayer2)); // 2000 et 3000 ==> OK
+		assertEquals(false, matchDauphine.CheckPoints(tennisPlayer3, tennisPlayer2)); // 4000 et 3000 ==> NOK
+		assertEquals(true, matchDauphine.CheckPoints(testPlayer, tennisPlayer3)); // 4000 et 4000 ==> OK
 	}
 
 }

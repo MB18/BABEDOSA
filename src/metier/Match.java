@@ -10,14 +10,14 @@ public class Match {
 	private TennisPlayer player1;
 	private TennisPlayer player2;
 
-	
+	private static final double RATIO_MAX = (double)2/3;
 	
 	public Match(Date d, TennisPlayer player1, TennisPlayer player2, Tournament t){
 		if (CheckPoints(player1,player2)) {
 			date = d; 
 			tournament = t;
-			player1 = player1;
-			player2 = player2;
+			this.player1 = player1;
+			this.player2 = player2;
 			winner = null;
 		}
 		else 
@@ -62,23 +62,26 @@ public class Match {
 		winner = player.getName();
 
 	}
-	//A  VERIFIER 
-	/*
-    public boolean CheckPoints(TennisPlayer t1, TennisPlayer t2){	
-        if ((player1.getPoints() > player2.getPoints()) & (player2.getPoints()/player1.getPoints() <= 1/3))
-            	return false;  
- 
-        else if ((player1.getPoints() < player2.getPoints()) & (player1.getPoints()/player2.getPoints() <= 1/3))
-            	return false;
-        else 
-        	return true;  
-    }*/
-	
 	  public boolean CheckPoints(TennisPlayer t1, TennisPlayer t2){	
-	        if (t1.getPoints()/t2.getPoints() <= 1/3)
-	            	return false;  
-	        else 
-	        	return true;  
-	    }
+		  double p1 = (double) t1.getPoints(), p2 = (double)t2.getPoints();
+		 
+		 return (p1>p2? ( (p2/p1 <= RATIO_MAX) ? true : false) : ( ( (p2>p1) ? (  ((p1/p2) <= RATIO_MAX) ? true : false ) : true) ) );
+		  
+		  
+		 /* boolean possible= true; // if p1 = p2
+		  if(p1 > p2)
+		  {
+			  System.out.println(" RATIO : " +  p2/p1 + " RATIO MAX : " + RATIO_MAX);
+			possible = (( p2/p1 ) <= RATIO_MAX );
+		  }
+		  else if(p2 > p1)
+		  {
+			  System.out.println(" RATIO : " +  p1/p2 + " RATIO MAX : " + RATIO_MAX);
+			  possible = ( (p1/p2) <= RATIO_MAX);
+		  }*/ 
+		  //return possible;
+		}
+		 
+	      
 	
 }
