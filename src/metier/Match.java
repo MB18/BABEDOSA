@@ -7,8 +7,8 @@ public class Match {
 	private Date date;
 	private String winner;
 	private Tournament tournament;
-	private TennisPlayer player1 = new TennisPlayer("Nicole", "Pearson", "academyDauphine", 24, "Nicky", "Tennis", 21);
-	private TennisPlayer player2 = new TennisPlayer("Thomas", "Catton","academyDauphine", 24, "Tom", "Tennis", 24);
+	private TennisPlayer player1;
+	private TennisPlayer player2;
 
 	
 	
@@ -23,11 +23,6 @@ public class Match {
 		else 
 		{
 			System.out.println("No match possible");
-			/*date = null; 
-			tournament = null;
-			player1 = null;
-			player2 = null;
-			winner = null;*/
 		}
 	}
 	
@@ -67,6 +62,8 @@ public class Match {
 		winner = player.getName();
 
 	}
+	//A  VERIFIER 
+	/*
     public boolean CheckPoints(TennisPlayer t1, TennisPlayer t2){	
         if ((player1.getPoints() > player2.getPoints()) & (player2.getPoints()/player1.getPoints() <= 1/3))
             	return false;  
@@ -75,5 +72,13 @@ public class Match {
             	return false;
         else 
         	return true;  
-    }
+    }*/
+	
+	  public boolean CheckPoints(TennisPlayer t1, TennisPlayer t2){	
+	        if (t1.getPoints()/t2.getPoints() <= 1/3)
+	            	return false;  
+	        else 
+	        	return true;  
+	    }
+	
 }
