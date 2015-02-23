@@ -86,13 +86,15 @@ public class TestDancer {
 
 	@Test
 	public void testProceedings() {
-		// a modifier la US ou le code : temps echuffement ou temps de chor� ?
+		// a modifier la US ou le code : temps echuffement ou temps de chor��� ?
 		salutations = "Hello";
 		timeOfWarmUp = 1000;
 		msgToLeave = "Thank you !";
 		assertEquals(salutations, dancer.getSalutations());
 		assertEquals(ready, dancer.isReady());
 		assertEquals(msgToLeave, dancer.getMsgToLeave());
+		dancer.Proceedings();
+		
 	}
 
 	@Test

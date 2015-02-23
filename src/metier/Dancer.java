@@ -8,6 +8,8 @@ public class Dancer extends Person {
 	private String salutations;
 	private String msgToLeave;
 	public boolean ready;
+	public Date d = new Date(0);
+
 	
 	public Dancer(String name, String firstName, String academy, int age, String speciality, String surname){
 		super (name, firstName, academy, age, surname, speciality);
@@ -69,7 +71,7 @@ public class Dancer extends Person {
     }
     
 	
-	//fonctionnalit» : temps que le temps »coul» est < timeofwarmup c pas bon
+	//fonctionnalitÔøΩ : temps que le temps ÔøΩcoulÔøΩ est < timeofwarmup c pas bon
 	public void WarmUp()
     {
 	    Date date = new Date();
@@ -91,11 +93,11 @@ public class Dancer extends Person {
 	public void MsgtoLeave(){
 		System.out.println(msgToLeave);
 	}	
+	/*
 	public static void main(String [] args)
 	{
-		Date d = new Date(0);
-		System.out.println(d);
-	}
+				System.out.println(d);
+	}*/
 	
 	public boolean CheckWarmUpTime(){
 		if(this.getTimeOfwarmUp()<15){

@@ -25,11 +25,13 @@ public class TennisPlayer extends Person {
 	
     public int WinOver(TennisPlayer p)
     {
-        if (this.points > p.points)
+    	if (this.points > p.points){
             this.setPoints(this.getPoints() + (this.getPoints() - p.getPoints()));
-        else
+            p.setPoints(p.getPoints() - (this.getPoints() - p.getPoints()));
+        } else {
             this.setPoints(this.getPoints() + (p.getPoints() - this.getPoints()));
-            
+            p.setPoints(this.getPoints() - (p.getPoints() - this.getPoints()));
+        }
         return this.points;
     }
 	
