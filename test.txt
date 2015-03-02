@@ -1,7 +1,0 @@
-1) Crééer projet sur le site avec README
-2) clone ine DEsktop (selectionner le dossier Mes documents/Github
-3) normalement le dossier est visible dans l'explorateur
-
-4) ajout dse classes à l'intérieur
-
-5) invitation des membres du projet
