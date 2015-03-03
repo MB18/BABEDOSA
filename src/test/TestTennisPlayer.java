@@ -40,7 +40,7 @@ public class TestTennisPlayer {
 		int testpointswin2 = tennisPlayer2.WinOver(tennisPlayer1);
 		assertEquals(testpointswin2, tennisPlayer2.getPoints());
 		int testpointswin1 = tennisPlayer1.WinOver(tennisPlayer2);
-		assertEquals(testpointswin1, tennisPlayer2.getPoints());
+		assertEquals(testpointswin1, tennisPlayer1.getPoints());
 
 	}
 

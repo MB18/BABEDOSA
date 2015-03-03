@@ -2,12 +2,14 @@ package metier;
 
 public class Person {
 	
-	private String name;
-	private String firstName;
-	private String academy;
-	private int age;
-	private String speciality;
-	private String surname;
+	protected String name;
+	protected String firstName;
+	protected String academy;
+	protected int age;
+	protected String speciality;
+	protected String surname;
+	
+	public Person(){}
 	
 	public Person(String n, String fn, String a, int ag, String s, String sp){
 		name = n; 

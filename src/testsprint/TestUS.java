@@ -10,6 +10,7 @@ import java.util.Locale;
 import metier.Academy;
 import metier.Battle;
 import metier.Dancer;
+import metier.Robot;
 import metier.Team;
 import metier.TennisPlayer;
 import metier.Tournament;
@@ -136,7 +137,13 @@ public class TestUS {
 		
 		System.out.println("____________________");
 		System.out.println();
-
+		
+		Robot r = new Robot();
+		r.loadPlayer(tennisPlayer1);
+		r.present();
+		
+		Robot r2 = new Robot();
+		r2.present();
 	}
 
 }

@@ -3,7 +3,11 @@ package metier;
 
 public class TennisPlayer extends Person {
 	
-	private int points;
+	protected int points;
+	
+	public TennisPlayer(){
+		super();
+	}
 	
 	public TennisPlayer(String n, String fn, String a, int ag, String sp, String s){
 		super (n, fn, a, ag, sp, s);
@@ -25,12 +29,15 @@ public class TennisPlayer extends Person {
 	
     public int WinOver(TennisPlayer p)
     {
+		int pthis = this.getPoints();
+		int pp= p.getPoints();
+		
     	if (this.points > p.points){
-            this.setPoints(this.getPoints() + (this.getPoints() - p.getPoints()));
-            p.setPoints(p.getPoints() - (this.getPoints() - p.getPoints()));
+            this.setPoints(pthis + (pthis - pp));
+            p.setPoints(pp - (pthis - pp));
         } else {
-            this.setPoints(this.getPoints() + (p.getPoints() - this.getPoints()));
-            p.setPoints(this.getPoints() - (p.getPoints() - this.getPoints()));
+            this.setPoints(pthis + (pp - pthis));
+            p.setPoints(pthis - (pp - pthis));
         }
         return this.points;
     }

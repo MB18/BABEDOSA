@@ -68,18 +68,7 @@ public class Match {
 		 return (p1>p2? ( (p2/p1 <= RATIO_MAX) ? true : false) : ( ( (p2>p1) ? (  ((p1/p2) <= RATIO_MAX) ? true : false ) : true) ) );
 		  
 		  
-		 /* boolean possible= true; // if p1 = p2
-		  if(p1 > p2)
-		  {
-			  System.out.println(" RATIO : " +  p2/p1 + " RATIO MAX : " + RATIO_MAX);
-			possible = (( p2/p1 ) <= RATIO_MAX );
-		  }
-		  else if(p2 > p1)
-		  {
-			  System.out.println(" RATIO : " +  p1/p2 + " RATIO MAX : " + RATIO_MAX);
-			  possible = ( (p1/p2) <= RATIO_MAX);
-		  }*/ 
-		  //return possible;
+
 		}
 		 
 	      
