@@ -8,7 +8,6 @@ public class Person {
 	private int age;
 	private String speciality;
 	private String surname;
-	//private Academy academyDauphine =new Academy(1,"AcademyDauphine", "Paris", "France");
 	
 	public Person(String n, String fn, String a, int ag, String s, String sp){
 		name = n; 
@@ -58,8 +57,6 @@ public class Person {
 	public void setSpeciality(String speciality) {
 		this.speciality = speciality;
 	}
-
-
 
 }
 

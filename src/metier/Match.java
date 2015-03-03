@@ -57,7 +57,7 @@ public class Match {
 		this.player2 = player2;
 	}
 	
-	// method to add a winner for the Match
+	// method to set a winner 
 	public void BeWinner(TennisPlayer player){
 		winner = player.getName();
 

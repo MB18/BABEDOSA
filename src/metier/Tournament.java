@@ -67,7 +67,7 @@ public class Tournament {
 		return fixtures;
 	}
 	
-	// method to add a winner for the tournament
+	// method to set a winner for the tournament
 	public void BeWinner(TennisPlayer player){
 		player.setPoints(player.getPoints() + bonus );
 		winner = player.getName();

@@ -71,7 +71,7 @@ public class Dancer extends Person {
     }
     
 	
-	//fonctionnalit� : temps que le temps �coul� est < timeofwarmup c pas bon
+	//fonctionnalite : temps que le temps ecoule est < timeofwarmup l'échauffement n'est pas réalisable
 	public void WarmUp()
     {
 	    Date date = new Date();
@@ -93,11 +93,6 @@ public class Dancer extends Person {
 	public void MsgtoLeave(){
 		System.out.println(msgToLeave);
 	}	
-	/*
-	public static void main(String [] args)
-	{
-				System.out.println(d);
-	}*/
 	
 	public boolean CheckWarmUpTime(){
 		if(this.getTimeOfwarmUp()<15){

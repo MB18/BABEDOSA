@@ -7,7 +7,8 @@ import java.util.Locale;
 
 public class Battle {
 	
-	private Date date, dateformate;
+	private Date date;
+	//dateformate
 	private String place;
 	private Team team1;
 	private Team team2;
@@ -61,7 +62,7 @@ public class Battle {
 		this.winner = winner;
 	}
 
-	// method to add a winner for the battle ???
+	// method to set a winner for the battle
 	public void WinBattle(Team team){
 		winner = team.getName();
 	}
