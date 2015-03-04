@@ -10,7 +10,7 @@ import javax.swing.JTextField;
 
 import controleur.MainControler;
 
-public class AddMatchParticipants extends JPanel {
+public class AddMatch extends JPanel {
 
 	private JLabel lblDate,lblInfo;
 	private JTextField date;
@@ -21,7 +21,7 @@ public class AddMatchParticipants extends JPanel {
 	
 	
 	
-	public AddMatchParticipants(MainControler c) 
+	public AddMatch(MainControler c) 
 	{
 		
 		c.setView(this);

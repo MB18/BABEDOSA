@@ -15,8 +15,8 @@ import metier.*;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 
-import vue.AddMatchParticipants;
-import vue.AddShowParticipants;
+import vue.AddMatch;
+import vue.AddShow;
 import vue.AddStudent;
 
 public class MainControler implements ActionListener{
@@ -32,8 +32,8 @@ public class MainControler implements ActionListener{
 	public static final String GO_MATCH = "GOM";
 	
 	private JPanel view;
-	private AddMatchParticipants m;
-	private AddShowParticipants s;
+	private AddMatch m;
+	private AddShow s;
 	private AddStudent t;
 	private ArrayList<Dancer> dancers;
 	private ArrayList<TennisPlayer> tennisPlayers;
@@ -85,7 +85,7 @@ public class MainControler implements ActionListener{
 		{
 			JFrame frame = AddStudent.getFrame();
 			frame.getContentPane().removeAll();
-			m = new AddMatchParticipants(this);
+			m = new AddMatch(this);
 			frame.getContentPane().add(m);
 			for(int i = 0 ; i < tennisPlayers.size() ; i++)
 				m.addIntoComboBoxes(tennisPlayers.get(i).getSurname());
@@ -95,7 +95,7 @@ public class MainControler implements ActionListener{
 		{
 			JFrame frame = AddStudent.getFrame();
 			frame.getContentPane().removeAll();
-			s = new AddShowParticipants(this);
+			s = new AddShow(this);
 			frame.getContentPane().add(s);
 			for ( int i = 0 ; i < dancers.size() ; i++)
 				s.addIntoComboBox(dancers.get(i).getSurname());

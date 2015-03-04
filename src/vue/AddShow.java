@@ -13,7 +13,7 @@ import javax.swing.JTextField;
 
 import controleur.MainControler;
 
-public class AddShowParticipants extends JPanel {
+public class AddShow extends JPanel {
 
 	private MainControler controler;
 	private JLabel lblName, lblPlace,lblInfo;
@@ -25,7 +25,7 @@ public class AddShowParticipants extends JPanel {
 	
 	
 	
-	public AddShowParticipants(MainControler c) 
+	public AddShow(MainControler c) 
 	{
 		
 		c.setView(this);
