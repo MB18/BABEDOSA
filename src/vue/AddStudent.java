@@ -27,7 +27,7 @@ public class AddStudent extends JPanel{
 		
 		c.setView(this);
 		lblFirstName = new JLabel ("First name : ");
-		lblName = new JLabel("name : ");
+		lblName = new JLabel("Name : ");
 		lblNickname = new JLabel("Nickname: ");
 		lblAge = new JLabel ("Age :");
 		lblSpe = new JLabel ("Speciality :");
@@ -37,10 +37,10 @@ public class AddStudent extends JPanel{
 		nickname = new JTextField(40);
 		age = new JTextField(40);
 		spe = new JTextField(40);
-		name.setText("Beattie");
-		firstName.setText("Maksym");
-		age.setText("22");
-		nickname.setText("The Beast");
+		name.setText("Safin");
+		firstName.setText("Marat");
+		age.setText("17");
+		nickname.setText("The Ancient");
 		sports = new JComboBox();
 		submit = new JButton("Register");
 		goMatch = new JButton("Create Match");

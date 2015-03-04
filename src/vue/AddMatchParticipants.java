@@ -85,7 +85,7 @@ public class AddMatchParticipants extends JPanel {
 		lblInfo.setVisible(true);
 		if(ok)
 		{
-			lblInfo.setText((String)player1.getSelectedItem() + " and " + (String)player2.getSelectedItem()  + "will play this match");
+			lblInfo.setText((String)player1.getSelectedItem() + " and " + (String)player2.getSelectedItem()  + " has been registerd for this match");
 			lblInfo.setForeground(Color.GREEN);
 			addPlayers.setVisible(false);
 			

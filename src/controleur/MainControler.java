@@ -160,7 +160,12 @@ public class MainControler implements ActionListener{
 			while(j < tennisPlayers.size() && !p2found);
 			tp2 = tennisPlayers.get(j-1);
 			if(match.CheckPoints(tp1, tp2))
+			{
 				m.PlayersAdded(true);
+				if(p1 == "ROBOT" || p2 == "ROBOT")
+					System.out.println(Robot.getInstance().getSpeciality());
+			}
+				
 			else
 				m.PlayersAdded(false);
 		}
