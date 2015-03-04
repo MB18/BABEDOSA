@@ -138,12 +138,12 @@ public class TestUS {
 		System.out.println("____________________");
 		System.out.println();
 		
-		Robot r = new Robot();
+		Robot r = Robot.getInstance();
 		r.loadPlayer(tennisPlayer1);
 		r.present();
 		
-		Robot r2 = new Robot();
-		r2.present();
+		//Robot r2;
+		//r2.present();
 	}
 
 }

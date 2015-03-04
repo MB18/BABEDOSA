@@ -68,7 +68,7 @@ public class Match {
 	  public boolean CheckPoints(TennisPlayer t1, TennisPlayer t2){	
 		  double p1 = (double) t1.getPoints(), p2 = (double)t2.getPoints();
 		 
-		 return (p1>p2? ( (p2/p1 <= RATIO_MAX) ? true : false) : ( ( (p2>p1) ? (  ((p1/p2) <= RATIO_MAX) ? true : false ) : true) ) );
+		 return (p1>p2? ( (p2/p1 >= RATIO_MAX) ? true : false) : ( ( (p2>p1) ? (  ((p1/p2) >= RATIO_MAX) ? true : false ) : true) ) );
 		  
 		  
 

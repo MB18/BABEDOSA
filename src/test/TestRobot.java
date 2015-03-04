@@ -12,10 +12,12 @@ public class TestRobot {
 
 	protected TennisPlayer tennisPlayer1, tennisPlayer2;
 	protected Robot robottest;
+	Robot r = Robot.getInstance();
+	Robot r2;
 	
 	@Before
 	public void setUp() throws Exception {
-		robottest = new Robot();
+		
 		tennisPlayer1 = new TennisPlayer("Nicole", "Pearson", "academyDauphine", 24, "Nicky", "Tennis");
 		tennisPlayer2 = new TennisPlayer("Thomas", "Catton","academyDauphine", 24, "Tom", "Tennis", 24);
 	}
@@ -26,53 +28,53 @@ public class TestRobot {
 
 	@Test
 	public void testRobotS() {
-		Robot robottest2 = new Robot("Nicole", "Pearson", "academyDauphine", 24, "Nicky", "Tennis", 3000);
-		assertNotNull(robottest2);
+		assertNotNull(r);
 	}
 
 	@Test
 	public void testRobot() {
-		assertNotNull(robottest);
+		assertNotNull(r);
+		
 	}
 	
 	@Test
 	public void testGetId() {
-		assertEquals(1, robottest.getId());
+		assertEquals(1, r.getId());
 	}
 	
 
 	@Test
 	public void testSetId() {
-		robottest.setId(2);
-		assertEquals(2, robottest.getId());
+		r.setId(2);
+		assertEquals(2, r.getId());
 	}
 
 
 	@Test
 	public void testGetInstance() {
 
-		assertNotNull(robottest.getInstance());
-			Robot robot2 = new Robot();
-		assertEquals(robot2, robot2.getInstance());
+		assertNotNull(Robot.getInstance());
+		//	Robot robot2 = new Robot();
+		//assertEquals(robot2, robot2.getInstance());
 	}
 	
 	@Test
 	public void testSetInstance() {
-		Robot robot2 = new Robot();
-		robottest.setInstance(robot2);
-		assertEquals(robot2, robottest.getInstance());
+		Robot robot2 = Robot.getInstance();
+		r.setInstance(robot2);
+		assertEquals(robot2, r.getInstance());
 	}
 
 
 	@Test
 	public void testLoadPlayer() {
-		robottest.loadPlayer(tennisPlayer1);
+		r.loadPlayer(tennisPlayer1);
 		assertNotNull(tennisPlayer1);
 	}
 
 	@Test
 	public void testpresent() {
-		assertEquals(1, robottest.getId());
+		assertEquals(2, r.getId());
 	}
 	
 

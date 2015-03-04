@@ -4,12 +4,12 @@ public class Robot extends TennisPlayer{
 	private static Robot instance;
 	private int id;
 	
-	public Robot(String n, String fn, String a, int ag, String sp, String s, int p) {
+	private Robot(String n, String fn, String a, int ag, String sp, String s, int p) {
 		super(n, fn, a, ag, sp, s, p);
 		id = 1;
 	}
 	
-	public Robot(){
+	private Robot(){
 		super();
 		id = 1;
 	}

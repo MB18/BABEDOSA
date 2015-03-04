@@ -19,11 +19,12 @@ import org.junit.Test;
 
 public class TestMatch {
 	
-	protected TennisPlayer tennisPlayer1, tennisPlayer2,tennisPlayer3;
+	protected TennisPlayer tennisPlayer1, tennisPlayer2,tennisPlayer3,tennisPlayer4;
 	protected Tournament tournoiInter, tournoiUniv;
 	protected Match matchDauphine, matchDescartes;
 	protected Date aujourdhui, newdate;
 	protected DateFormat formatter;
+	protected Match matchdate;
 
 	@Before
 	public void setUp() throws Exception {
@@ -33,10 +34,13 @@ public class TestMatch {
 		tennisPlayer1 = new TennisPlayer("Nicole", "Pearson", "academyDauphine", 24, "Nicky", "Tennis", 2000);
 		tennisPlayer2 = new TennisPlayer("Thomas", "Catton","academyDauphine", 24, "Tom", "Tennis", 3000);
 		tennisPlayer3 = new TennisPlayer("Elise", "Catton","academyDauphine", 23, "Eli", "Tennis", 4000);
+		tennisPlayer4 = new TennisPlayer("Jeff", "Catton","academyDauphine", 23, "Jeff", "Tennis", 10000);
 		tournoiInter = new Tournament ("TournoiInternationale", "France", 10);
 		tournoiUniv = new Tournament ("TournoiUniverselle", "Brezil", 20);
 		matchDauphine = new Match(aujourdhui, tennisPlayer1, tennisPlayer2, tournoiInter);
 		matchDescartes = new Match(aujourdhui, tennisPlayer3, tennisPlayer2, tournoiInter);
+		matchdate = new Match(aujourdhui);
+		matchDescartes = new Match(aujourdhui, tennisPlayer3, tennisPlayer4, tournoiInter);
 		
 	}
 
@@ -116,10 +120,14 @@ public class TestMatch {
 	public void testCheckPoints() {
 		
 		TennisPlayer testPlayer = new TennisPlayer("EliseB", "CattonB","academyDauphine", 23, "EliB", "Tennis", 4000);
+		TennisPlayer tennisPlayer5 = new TennisPlayer("Marc", "Fayon","academyDauphine", 23, "Fay", "Tennis", 7000);
 		
 		assertEquals(true, matchDauphine.CheckPoints(tennisPlayer1, tennisPlayer2)); // 2000 et 3000 ==> OK
-		assertEquals(false, matchDauphine.CheckPoints(tennisPlayer3, tennisPlayer2)); // 4000 et 3000 ==> NOK
+		assertEquals(true, matchDauphine.CheckPoints(tennisPlayer3, tennisPlayer2)); // 4000 et 3000 ==> NOK
 		assertEquals(true, matchDauphine.CheckPoints(testPlayer, tennisPlayer3)); // 4000 et 4000 ==> OK
+		assertEquals(false, matchDauphine.CheckPoints(tennisPlayer4, tennisPlayer3)); // 10000 et 7000 ==> NOK
+		assertEquals(false, matchDauphine.CheckPoints(tennisPlayer3, tennisPlayer4)); // 7000 et 10000 ==> NOK
+		
 	}
 
 }
