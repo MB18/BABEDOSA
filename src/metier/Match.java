@@ -25,7 +25,10 @@ public class Match {
 			System.out.println("No match possible");
 		}
 	}
-	
+	public Match (Date d)
+	{
+		date = d;
+	}
 	public Date getDate() {
 		return date;
 	}
